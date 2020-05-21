@@ -1,0 +1,11 @@
+*.pyc
+*~
+*__pycache__
+*__init__.py
+.sqlite3
+.DS_Store
+*.idea
+media
+.env
+.vscode
+migrations

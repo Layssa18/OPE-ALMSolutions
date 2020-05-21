@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css?family=Numans');
+
+html {
+  height: 100%;
+}
+
+body {
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  	background-color: #40e0d0;
+}
+
+b {
+  font-weight: bold;
+}
+/*----------------------------------------Login Card----------------------------------------*/
+.card-login {
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  width: 300px;
+  border: 1 none;
+  border-radius: 20px;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+
+  box-shadow: 0 0 15px 1px rgba(0,0,0, 0.4);
+  padding: 20px 30px;
+
+  box-sizing: border-box;
+  margin: 3% auto;
+}
+/*------------------------------------------Footer------------------------------------------*/
+.footer {
+    padding-block-end: 1%;
+    text-align: center;
+    font-size: 10px;
+    color: #0c0c0c;
+}
