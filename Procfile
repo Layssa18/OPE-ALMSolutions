@@ -1,1 +1,1 @@
-web: gunicorn ValeVerdeEventos.wsgi --log-file -
+web: gunicorn ValeVerdeEventos.ValeVerdeEventos.wsgi --log-file -
