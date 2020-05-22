@@ -1,5 +1,5 @@
 """
-ASGI config for ValeVerdeEventos project.
+ASGI config for main project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -13,6 +13,6 @@ from django.core.asgi import get_asgi_application
 
 from dj_static import Cling
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'ValeVerdeEventos.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'main.settings')
 
 application = Cling(get_asgi_application())
