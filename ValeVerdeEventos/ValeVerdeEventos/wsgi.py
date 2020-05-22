@@ -1,5 +1,5 @@
 """
-WSGI config for main project.
+WSGI config for ValeVerdeEventos project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -13,6 +13,6 @@ from django.core.wsgi import get_wsgi_application
 
 from dj_static import Cling
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'main.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'ValeVerdeEventos.settings')
 
 application = Cling(get_wsgi_application())
