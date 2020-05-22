@@ -1,12 +1,10 @@
-*.pyc
+*pyc
 *~
 *__pycache__
 *__init__.py
-.sqlite3
-.DS_Store
+*.sqlite3
 *.idea
-media
 .env
 .vscode
 migrations
-.bat
+*.bat
