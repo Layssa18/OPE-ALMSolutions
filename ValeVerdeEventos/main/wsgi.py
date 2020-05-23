@@ -13,10 +13,6 @@ from django.core.wsgi import get_wsgi_application
 
 from dj_static import Cling
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'main.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'ValeVerdeEventos.main.settings')
 
 application = Cling(get_wsgi_application())
-
-sys.path.append('/home/django_projects/ValeVerdeEventos')
-
-sys.path.append('/home/django_projects/ValeVerdeEventos/main')
