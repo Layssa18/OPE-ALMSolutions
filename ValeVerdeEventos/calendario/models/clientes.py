@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-
+import re
 from django.core import validators
 from django.core.mail import send_mail
 from django.utils.translation import ugettext_lazy as _
@@ -9,7 +9,7 @@ from django.utils.translation import ugettext_lazy as _
 
 class t_cliente(models.Model):
     id_cliente = models.AutoField(primary_key=True)
-    nome = models.CharField(_('Nome'), max_length=30
+    nome = models.CharField(_('Nome'), max_length=30,
         null=False, blank=False)
     sobrenome = models.CharField(_('Sobrenome'), max_length=30,
         null=False, blank=False)
@@ -20,7 +20,7 @@ class t_cliente(models.Model):
                 _('Insira um endereço de e-mail válido!'),
                 _('Inválido!'))],
                              )
-    celular = models.CharField(_('Celular')max_length=20, unique=True))
+    celular = models.CharField(_('Celular'), max_length=20, unique=True)
 
     class Meta:
         verbose_name = _('Cliente')
