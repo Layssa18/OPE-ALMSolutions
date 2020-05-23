@@ -1,11 +1,8 @@
 *pyc
 *~
 *__pycache__
-*__init__.py
 *.sqlite3
 *.idea
 .env
 .vscode
 migrations
-*.bat
-*venv
