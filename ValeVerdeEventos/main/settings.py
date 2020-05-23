@@ -27,7 +27,11 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['valeverde.herokuapp.com']
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+    'valeverde.herokuapp.com',
+]
 
 
 # Application definition
@@ -94,6 +98,7 @@ default_dburl = 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')
 DATABASES = {
     'default': config('DATABASE_URL', default=default_dburl, cast=dburl),
 }
+
 
 
 # Password validation
