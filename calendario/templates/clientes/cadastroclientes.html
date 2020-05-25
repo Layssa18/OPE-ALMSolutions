@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro Fornecedores</title>
+    <title>Cadastro Clientes</title>
 </head>
 <body>
     <center>
@@ -15,8 +15,8 @@
     </form>
 
 
-    {% if clientes %}
-        <a href="% url 'apagarfornecedor'%"> Apagar Cliente </a>
+    {% if cliente %}
+        <a href="{% url 'apagarcliente' cliente.id_cliente %}"> Apagar Cliente </a>
     {% endif %}
     </center>
 

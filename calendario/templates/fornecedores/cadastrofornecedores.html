@@ -15,8 +15,8 @@
     </form>
 
 
-    {% if fornecedores %}
-        <a href="% url 'apagarfornecedor'%"> Apagar Fornecedor </a>
+    {% if fornecedor %}
+        <a href="{% url 'apagarfornecedor' fornecedor.id_fornecedor %}"> Apagar Fornecedor </a>
     {% endif %}
     </center>
 

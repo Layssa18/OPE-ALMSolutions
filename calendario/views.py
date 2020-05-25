@@ -22,22 +22,43 @@ def cadastroevento(request):
 
 def fornecedores(request):
     fornecedores = t_fornecedor.objects.all()
-    return render(request, 'calendario/fornecedores.html', {'fornecedores':fornecedores})
+    return render(request, 'fornecedores/fornecedores.html', {'fornecedores':fornecedores})
 
-def cadastrofornecedores(request):
+def cadastrofornecedor(request):
     form = fornecedorForm(request.POST or None)
 
     if form.is_valid():
         form.save()
         return redirect('fornecedores')
 
-    return render(request, 'calendario/cadastrofornecedores.html', {'form':form})
+    return render(request, 'fornecedores/cadastrofornecedores.html', {'form':form})
+
+
+def atualizafornecedor(request, id):
+    fornecedor = t_fornecedor.objects.get(id_fornecedor=id)
+    form = fornecedorForm(request.POST or None, instance=fornecedor)
+
+    if form.is_valid():
+        form.save()
+        return redirect('fornecedores')
+
+    return render(request, 'fornecedores/cadastrofornecedores.html', {'form':form, 'fornecedor': fornecedor})
+
+
+def apagarfornecedor(request, id):
+    fornecedor = t_fornecedor.objects.get(id_fornecedor=id)
+
+    if request.method == "POST":
+        fornecedor.delete()
+        return redirect('fornecedores')
+
+    return render(request, 'fornecedores/apagarfornecedor.html', {'fornecedor':fornecedor})
 
 
 
 def clientes(request):
     clientes = t_cliente.objects.all()
-    return render(request, 'calendario/clientes.html', {'clientes':clientes})
+    return render(request, 'clientes/clientes.html', {'clientes':clientes})
 
     
 def cadastrocliente(request):
@@ -47,4 +68,25 @@ def cadastrocliente(request):
         form.save()
         return redirect('clientes')
 
-    return render(request, 'calendario/cadastroclientes.html', {'form':form})
+    return render(request, 'clientes/cadastroclientes.html', {'form':form})
+
+
+def atualizacliente(request, id):
+    cliente = t_cliente.objects.get(id_cliente=id)
+    form = clienteForm(request.POST or None, instance=cliente)
+
+    if form.is_valid():
+        form.save()
+        return redirect('clientes')
+
+    return render(request, 'clientes/cadastroclientes.html', {'form':form, 'cliente': cliente})
+
+
+def apagarcliente(request, id):
+    cliente = t_cliente.objects.get(id_cliente=id)
+
+    if request.method == "POST":
+        cliente.delete()
+        return redirect('clientes')
+
+    return render(request, 'clientes/apagarcliente.html', {'cliente':cliente})

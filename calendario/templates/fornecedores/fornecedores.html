@@ -8,13 +8,12 @@
 <body>
     <center>
         Fornecedores
-    <p>
-        <a href="{% url 'cadastrofornecedores'%}">Adicionar Fornecedor </a>
-    </p>
-    
+ 
     <ul>
         {% for fornecedor in fornecedores %}
+        <a href="{% url 'atualizafornecedor' fornecedor.id_fornecedor %}">
             <li> {{ fornecedor.nome}} </li>
+        </a>
             <li> {{ fornecedor.sobrenome}} </li>
             <li> {{ fornecedor.email}} </li>
             <li> {{ fornecedor.celular}} </li>
@@ -22,6 +21,12 @@
 
         {% endfor %}
     </ul>
+
+
+    <p>
+        <a href="{% url 'cadastrofornecedor'%}">Adicionar Fornecedor </a>
+    </p>
+    
 
     </center>
 </body>

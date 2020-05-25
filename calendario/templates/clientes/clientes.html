@@ -8,20 +8,22 @@
 <body>
     <center><center>
         Clientes
-    <p>
-        <a href="{% url 'cadastrocliente'%}">Adicionar Cliente </a>
-    </p>
+
     
     <ul>
-        {% for cliente in clientes %}
+        {% for cliente in clientes %}  
+        <a href="{% url 'atualizacliente' cliente.id_cliente %}">
             <li> {{ cliente.nome}} </li>
+        </a>
             <li> {{ cliente.sobrenome}} </li>
             <li> {{ cliente.email}} </li>
             <li> {{ cliente.celular}} </li>
-
-
         {% endfor %}
     </ul>
+
+    <p>
+        <a href="{% url 'cadastrocliente'%}">Adicionar Cliente </a>
+    </p>
 
 
 

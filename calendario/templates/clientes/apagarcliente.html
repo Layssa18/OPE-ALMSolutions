@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro Fornecedores</title>
+    <title>Clientes</title>
 </head>
 <body>
     <center>
-    Cadastro Eventos
-    <form method="POST">
+        Clientes
+        <form method="POST">
         {% csrf_token %}
-        {{form}}
-        <button type="submit"> Salvar </button>
-    </form>
-
+        Deseja apagar o cliente?
+        <p>
+            <button type="submit"> Apagar </button>
+        </p>
+        </form>    
     </center>
-
 </body>
 </html>
