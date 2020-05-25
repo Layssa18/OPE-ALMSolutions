@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendário</title>
+</head>
+<body>
+    <center>
+    Calendário
+    <p>
+        <a href="{% url 'cadastroevento'%}">Adicionar Evento </a>
+    </p>
+    
+    <ul>
+        {% for evento in eventos %}
+            <li> {{ evento.evento}} </li>
+            <li> {{ evento.servicos}} </li>
+            <li> {{ evento.descricao}} </li>
+            <li> {{ evento.valor}} </li>
+            <li> {{ evento.data_hora}} </li>
+            <li> {{ evento.fk_Cliente}} </li>
+
+
+        {% endfor %}
+    </ul>
+
+
+
+    </center>
+</body>
+</html>

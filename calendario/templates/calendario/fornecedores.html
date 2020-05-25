@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fornecedores</title>
+</head>
+<body>
+    <center>
+        Fornecedores
+    <p>
+        <a href="{% url 'cadastrofornecedores'%}">Adicionar Fornecedor </a>
+    </p>
+    
+    <ul>
+        {% for fornecedor in fornecedores %}
+            <li> {{ fornecedor.nome}} </li>
+            <li> {{ fornecedor.sobrenome}} </li>
+            <li> {{ fornecedor.email}} </li>
+            <li> {{ fornecedor.celular}} </li>
+
+
+        {% endfor %}
+    </ul>
+
+    </center>
+</body>
+</html>

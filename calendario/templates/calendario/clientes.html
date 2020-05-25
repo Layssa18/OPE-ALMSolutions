@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes</title>
+</head>
+<body>
+    <center><center>
+        Clientes
+    <p>
+        <a href="{% url 'cadastrocliente'%}">Adicionar Cliente </a>
+    </p>
+    
+    <ul>
+        {% for cliente in clientes %}
+            <li> {{ cliente.nome}} </li>
+            <li> {{ cliente.sobrenome}} </li>
+            <li> {{ cliente.email}} </li>
+            <li> {{ cliente.celular}} </li>
+
+
+        {% endfor %}
+    </ul>
+
+
+
+    </center>
+</body>
+</html>
