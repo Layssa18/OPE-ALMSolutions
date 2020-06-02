@@ -3,27 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calendário</title>
+    <title>ALMSolutions</title>
+    {% load static %}
+    <center>
+        <a href="{% url 'index'%}">
+        <img src="{% static 'images/logoValeVerde.png' %}"   alt="logo">
+        </a>
+    </center>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/layout.css' %}">
 </head>
 <body>
     <center>
-    Calendário
-    <p>
-        <a href="{% url 'cadastroevento'%}">Adicionar Evento </a>
-    </p>
+    <h1>
+        Calendário
+    </h1>
+        <a href="{% url 'cadastroevento'%}">
+            <button> Adicionar Evento </button>
+        </a>
     
-    <ul>
+    
+
+    <table border="2">
+        <tr>
+            <td>        
+                Tipo Evento
+            </td>
+            <td>
+                Cliente
+            </td>
+            <td>
+                Serviços Contratados            
+            </td>
+            <td>
+                Descrição 
+            </td>
+            <td>
+                Valor Total 
+            </td>
+            <td>
+                Data 
+            </td>
+        </tr>
         {% for evento in eventos %}
-            <li> {{ evento.evento}} </li>
-            <li> {{ evento.servicos}} </li>
-            <li> {{ evento.descricao}} </li>
-            <li> {{ evento.valor}} </li>
-            <li> {{ evento.data_hora}} </li>
-            <li> {{ evento.fk_Cliente}} </li>
+        <tr>
+            <td>        
+                {{ evento.evento}}
+            </td>
+            <td>
+                {{ evento.fk_Cliente}} 
+            </td>
+            <td>
+                {{ evento.servicos}}
+            </td>
+            <td>
+                {{ evento.descricao}}
+            </td>
+            <td>
+                {{ evento.valor}} 
+            </td>
+            <td>
+                {{ evento.data_hora}} 
+            </td>
 
-
+        </tr>
         {% endfor %}
-    </ul>
+    </table>
 
 
 

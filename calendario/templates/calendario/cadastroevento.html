@@ -15,20 +15,15 @@
 <body>
     <center>
     <h1>
-        Fornecedores <br>
-        Cadastro
+        Cadastro Eventos
     </h1>
-    
+
     <form method="POST">
         {% csrf_token %}
         {{form}}
         <button type="submit"> Salvar </button>
     </form>
 
-
-    {% if fornecedor %}
-        <a href="{% url 'apagarfornecedor' fornecedor.id_fornecedor %}"> Apagar Fornecedor </a>
-    {% endif %}
     </center>
 
 </body>
