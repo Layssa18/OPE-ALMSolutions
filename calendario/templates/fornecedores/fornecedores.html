@@ -20,7 +20,7 @@
         
     
     <a href="{% url 'cadastrofornecedor'%}">
-        <button> Adicionar Fornecedor </button>
+        <button> Adicionar </button>
     </a>
     
     <table border="2">
@@ -41,9 +41,7 @@
         {% for fornecedor in fornecedores %}
         <tr>
             <td>        
-                <a href="{% url 'atualizafornecedor' fornecedor.id_fornecedor %}">
-                    {{ fornecedor.nome}}
-                </a>
+                {{ fornecedor.nome}}
             </td>
             <td>
                 {{ fornecedor.sobrenome}}
@@ -54,15 +52,14 @@
             <td>
                 {{ fornecedor.celular}} 
             </td>
+            <td>
+            <a href="{% url 'atualizafornecedor' fornecedor.id_fornecedor %}">
+                <button>Editar</button> 
+            </a>
+            </td>
         </tr>
         {% endfor %}
     </table>
-
-
-
-
-
-    
 
     </center>
 </body>

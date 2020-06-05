@@ -18,7 +18,7 @@
         Calendário
     </h1>
         <a href="{% url 'cadastroevento'%}">
-            <button> Adicionar Evento </button>
+            <button> Adicionar </button>
         </a>
     
     
@@ -63,6 +63,11 @@
             </td>
             <td>
                 {{ evento.data_hora}} 
+            </td>
+            <td>
+                <a href="{% url 'atualizaevento' evento.id_evento %}">
+                    <button>Editar</button> 
+                </a>
             </td>
 
         </tr>

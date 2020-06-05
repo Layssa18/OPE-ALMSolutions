@@ -20,7 +20,7 @@
         
 
         <a href="{% url 'cadastrocliente'%}">
-            <button> Adicionar Cliente </button>
+            <button> Adicionar </button>
         </a>
 
         <table border="2">
@@ -41,9 +41,7 @@
             {% for cliente in clientes %}     
             <tr>
                 <td>        
-                <a href="{% url 'atualizacliente' cliente.id_cliente %}">
                     {{ cliente.nome}}
-                </a>
                 </td>
                 <td>
                     {{ cliente.sobrenome}} 
@@ -53,6 +51,11 @@
                 </td>
                 <td>
                     {{ cliente.celular}} 
+                </td>
+                <td>
+                <a href="{% url 'atualizacliente' cliente.id_cliente %}">
+                    <button>Editar</button> 
+                </a>
                 </td>
             </tr>
             {% endfor %}

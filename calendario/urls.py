@@ -1,9 +1,11 @@
 from django.urls import path
-from .views import calendario, cadastroevento, fornecedores, cadastrofornecedor, atualizafornecedor, apagarfornecedor, clientes, cadastrocliente, apagarcliente, atualizacliente
+from .views import calendario, cadastroevento, atualizaevento, apagarevento,  fornecedores, cadastrofornecedor, atualizafornecedor, apagarfornecedor, clientes, cadastrocliente, apagarcliente, atualizacliente
 
 urlpatterns = [
     path('', calendario, name='calendario'),
     path('cadastro/', cadastroevento, name='cadastroevento'),
+    path('atualiza/<int:id>/', atualizaevento, name='atualizaevento'),
+    path('apagar/<int:id>/', apagarevento, name='apagarevento'),
 
     
     path('fornecedores/', fornecedores, name='fornecedores'),

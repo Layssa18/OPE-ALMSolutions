@@ -14,23 +14,14 @@
 </head>
 <body>
     <center>
-    <h1>
-        Cadastro Eventos
-    </h1>
-
-    <form method="POST">
+        Eventos
+        <form method="POST">
         {% csrf_token %}
-        {{form}}
-        <button type="submit"> Salvar </button>
-    </form>
-
-    {% if evento %}
-    <a href="{% url 'apagarevento' evento.id_evento %}"> 
-        <button> Apagar Evento </button>
-    </a>
-    {% endif %}
-
+        Deseja apagar o evento?
+        <p>
+            <button type="submit"> Apagar </button>
+        </p>
+        </form>    
     </center>
-
 </body>
 </html>

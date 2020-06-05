@@ -19,6 +19,29 @@ def cadastroevento(request):
     return render(request, 'calendario/cadastroevento.html', {'form':form})
 
 
+def atualizaevento(request, id):
+    evento = t_evento.objects.get(id_evento=id)
+    form = eventoForm(request.POST or None, instance=evento)
+
+    if form.is_valid():
+        form.save()
+        return redirect('calendario')
+
+    return render(request, 'calendario/cadastroevento.html', {'form':form, 'evento': evento})
+
+
+def apagarevento(request, id):
+    evento = t_evento.objects.get(id_evento=id)
+
+    if request.method == "POST":
+        evento.delete()
+        return redirect('calendario')
+
+    return render(request, 'calendario/apagarevento.html', {'evento':evento})
+
+
+
+
 
 def fornecedores(request):
     fornecedores = t_fornecedor.objects.all()

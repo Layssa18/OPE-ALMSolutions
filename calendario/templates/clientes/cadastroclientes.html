@@ -23,7 +23,9 @@
 
 
     {% if cliente %}
-        <a href="{% url 'apagarcliente' cliente.id_cliente %}"> Apagar Cliente </a>
+        <a href="{% url 'apagarcliente' cliente.id_cliente %}"> 
+            <button>Apagar Cliente</button>
+        </a>
     {% endif %}
     </center>
 
