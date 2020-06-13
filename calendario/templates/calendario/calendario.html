@@ -44,7 +44,7 @@
                 Data 
             </td>
         </tr>
-        {% for evento in eventos %}
+        {% for evento in calendario %}
         <tr>
             <td>        
                 {{ evento.evento}}
@@ -77,5 +77,107 @@
 
 
     </center>
+
+
+    <!-- INICIO DA AGENDA API -->
+
+
+    <center style="color: white;">
+
+        
+
+
+        <h1>Próximos 10 Eventos:</h1>
+
+        <table border="1" style="width:80%;">
+            <thead>
+                <th class="text-center">Evento</th>
+                <th class="text-center">Data de Início</th>
+                <th class="text-center">Data Final</th>
+            </thead>
+            <tbody>
+                {% for item in eventos %}      
+                    <tr>
+                        <td align="center">{{ item.summary }}</td>
+                        <td align="center">{{ item.start.dateTime }}</td>
+                        <td align="center">{{ item.end.dateTime }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </center>
+<!-- 
+
+        <br>
+
+        <button class="btn btn-info" data-toggle="modal" data-target="#modalNovoEvento">Novo Evento</button>
+
+        <br>
+
+    <div class="modal fade" id="modalNovoEvento" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Novo Evento</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group row">
+                    <div class="col-sm-6">
+                        <label for="Titulo">Titulo</label>
+                        <input type="text" class="form-control" id="Titulo" placeholder="Titulo do evento">
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="Local">Local</label>
+                        <input type="text" class="form-control" id="Local" placeholder="Local do evento">
+                    </div>                                       
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-12">
+                        <label for="Descricao">Descrição</label>
+                        <input type="text" class="form-control" id="Descricao" placeholder="Descrição do evento">
+                    </div>                                    
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-6">
+                        <label for="Titulo">Data de Inicio</label>
+                        <input type="text" class="form-control" id="Titulo" placeholder="Data de Inicio do evento">
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="Local">Data Fim</label>
+                        <input type="text" class="form-control" id="Local" placeholder="Data do final  do evento">
+                    </div>                                       
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                <button type="button" class="btn btn-primary">Criar</button>
+            </div>
+            </div>
+        </div>
+    </div>
+
+-->
+
+
+
+
+
+<!-- FIM  DA AGENDA API -->
+
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
 </html>

@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import calendario, cadastroevento, atualizaevento, apagarevento,  fornecedores, cadastrofornecedor, atualizafornecedor, apagarfornecedor, clientes, cadastrocliente, apagarcliente, atualizacliente
+from .views import *
 
 urlpatterns = [
     path('', calendario, name='calendario'),
