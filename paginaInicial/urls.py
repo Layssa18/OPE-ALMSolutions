@@ -1,7 +1,6 @@
 from django.urls import path
-from .views import home, index
+from .views import index
 
 urlpatterns = [
     path('', index, name='index'),
-    path('agendaapi/', home , name='agendaapi')
 ]
